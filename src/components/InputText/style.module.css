@@ -1,0 +1,23 @@
+.inputContainer {
+  display: flex;
+  position: relative;
+  border: 0;
+  border-bottom: 2px solid #000;
+}
+
+.inputText {
+  width: 85%;
+  border: 0;
+  outline: 0;
+  font-size: 1.3rem;
+  padding: 7px 1px;
+  background: transparent;
+  font-weight: 700;
+  color: #4a4443;
+}
+
+.inputIcon {
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+}
