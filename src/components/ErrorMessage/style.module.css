@@ -1,10 +1,12 @@
 .messageContainer {
   margin: 4rem;
   padding: 5px;
-  background-color: rgba(232, 230, 230, 0.4);
+  background: #fafafa10;
+  backdrop-filter: blur(0.9rem);
 }
 
 .errorMessage {
   color: #ff0033;
   font-weight: 700;
+  font-size: 1.5rem;
 }

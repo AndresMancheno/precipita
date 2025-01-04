@@ -25,7 +25,6 @@ export default function Home() {
   const fetchData = async () => {
     try {
       const response = await getWeather(state.city);
-      console.log({ response });
       const weatherData = {
         name: response.name,
         temp: Math.floor(response.main.temp).toString(),
