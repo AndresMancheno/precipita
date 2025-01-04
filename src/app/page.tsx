@@ -1,7 +1,7 @@
 'use client';
 import styles from './page.module.css';
 import { useState } from 'react';
-import { getWeather } from './api/weather/route';
+import { getWeather } from '../api/weather/route';
 import { ErrorMessage, InputText, WeatherCard } from '@/components';
 
 export default function Home() {
