@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
-const url = 'https://api.openweathermap.org/data/2.5/weather';
-const apiKey = '8cc1eebd0ddfb61fc4e893ec31c22412';
+const url = process.env.NEXT_PUBLIC_WEATHER_API_URL;
+const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
 
 export async function getWeather(city: string) {
   try {

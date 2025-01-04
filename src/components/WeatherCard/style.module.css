@@ -1,20 +1,17 @@
 .weatherCard {
   margin: 1.5rem auto;
   width: 100%;
-  border: 2px solid #fafafa10;
+  border: 1px solid #000;
   border-radius: 5px;
-  background: #fafafa10;
+  background: #0007;
   backdrop-filter: blur(0.9rem);
   padding: 1.5rem;
   text-wrap: pretty;
+  color: #f1f1f1;
 
   @media screen and (min-width: 768px) {
     width: 50%;
   }
-}
-
-.currentTime {
-  color: #f1f1f1;
 }
 
 .mainInfo {
@@ -26,7 +23,6 @@
 
 .cityName {
   font-size: 2.5rem;
-  color: #f1f1f1;
 }
 
 .extraInfo {
@@ -41,6 +37,5 @@
 .extraInfoTitle {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #f1f1f1;
   padding-right: 0.5rem;
 }
