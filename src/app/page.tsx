@@ -13,23 +13,26 @@ export default function Home() {
       temp: string;
       humidity: string;
       feelsLike: string;
+      searchHour: string;
     };
     error: string;
   }>({
     city: '',
-    weatherData: { icon: '', name: '', temp: '', humidity: '', feelsLike: '' },
+    weatherData: { icon: '', name: '', temp: '', humidity: '', feelsLike: '', searchHour: '' },
     error: '',
   });
 
   const fetchData = async () => {
     try {
       const response = await getWeather(state.city);
+
       const weatherData = {
-        name: response.name,
-        temp: Math.floor(response.main.temp).toString(),
-        humidity: Math.floor(response.main.humidity).toString(),
-        feelsLike: Math.floor(response.main.feels_like).toString(),
-        icon: 'http://openweathermap.org/img/w/' + response.weather[0].icon + '.png',
+        name: response.location.name,
+        temp: Math.floor(response.current.temp_c).toString(),
+        humidity: Math.floor(response.current.humidity).toString(),
+        feelsLike: Math.floor(response.current.feelslike_c).toString(),
+        icon: 'https:' + response.current.condition.icon,
+        searchHour: response.location.localtime.split(' ')[1],
       };
 
       setState((prev) => ({
@@ -47,6 +50,7 @@ export default function Home() {
           feelsLike: '',
           humidity: '',
           temp: '',
+          searchHour: '',
         },
       }));
     }

@@ -7,7 +7,7 @@ export async function getWeather(city: string) {
   try {
     if (!url) return NextResponse.json({ error: 'WEATHER_API_URL is not set' }, { status: 500 });
 
-    const res = await fetch(`${url}?q=${city}&lang=es&units=metric&appid=${apiKey}`);
+    const res = await fetch(`${url}/current.json?q=${city}&key=${apiKey}`);
 
     if (!res.ok) {
       throw new Error(`API returned ${res.status}`);

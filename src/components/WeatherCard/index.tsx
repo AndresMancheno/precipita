@@ -8,6 +8,7 @@ const WeatherCard: FC<{
     temp: string;
     humidity: string;
     feelsLike: string;
+    searchHour: string;
   };
 }> = ({ weatherData }) => {
   const currentTime = useRef<string>('');
@@ -19,9 +20,8 @@ const WeatherCard: FC<{
     <>
       <div className={styles.weatherCard}>
         <p className={styles.currentTime}>
-          {' '}
-          <span className={styles.extraInfoTitle}>Hora actual: </span>
-          {currentTime.current}
+          <span className={styles.extraInfoTitle}>Hora de búsqueda: </span>
+          {weatherData?.searchHour}
         </p>
         <div className={styles.mainInfo}>
           <h2 className={styles.cityName}>{weatherData.name}</h2>
