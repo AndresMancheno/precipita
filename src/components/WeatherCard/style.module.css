@@ -1,0 +1,10 @@
+.weatherCard {
+  margin: 3rem;
+  width: 45rem;
+  height: 30rem;
+  border: 2px solid #fafafa10;
+  border-radius: 5px;
+  margin: 0 auto;
+  background: #fafafa10;
+  backdrop-filter: blur(0.4rem);
+}

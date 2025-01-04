@@ -1,0 +1,10 @@
+.messageContainer {
+  margin: 4rem;
+  padding: 5px;
+  background-color: rgba(232, 230, 230, 0.4);
+}
+
+.errorMessage {
+  color: #ff0033;
+  font-weight: 700;
+}
