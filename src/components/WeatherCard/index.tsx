@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useRef } from 'react';
 import styles from './style.module.css';
 
 const WeatherCard: FC<{
@@ -10,17 +10,34 @@ const WeatherCard: FC<{
     feelsLike: string;
   };
 }> = ({ weatherData }) => {
+  const currentTime = useRef<string>('');
+
+  const currentDate = new Date();
+  currentTime.current = currentDate.getHours() + ':' + currentDate.getMinutes();
+
   return (
     <>
       <div className={styles.weatherCard}>
-        <div className={styles.weatherCard__icon}>
+        <p className={styles.currentTime}>
+          {' '}
+          <span className={styles.extraInfoTitle}>Hora actual: </span>
+          {currentTime.current}
+        </p>
+        <div className={styles.mainInfo}>
+          <h2 className={styles.cityName}>{weatherData.name}</h2>
           <img src={weatherData.icon} alt={weatherData.name} width={100} height={100} />
         </div>
-        <div className={styles.weatherCard__info}>
-          <h2>{weatherData.name}</h2>
-          <p>Temperatura: {weatherData.temp}°C</p>
-          <p>Humedad: {weatherData.humidity}%</p>
-          <p>Sensación térmica: {weatherData.feelsLike}°C</p>
+        <div className={styles.extraInfo}>
+          <p>
+            <span className={styles.extraInfoTitle}>Temperatura:</span> {weatherData.temp}°C
+          </p>
+          <p>
+            <span className={styles.extraInfoTitle}>Humedad:</span> {weatherData.humidity}%
+          </p>
+          <p>
+            <span className={styles.extraInfoTitle}>Sensación térmica:</span>{' '}
+            {weatherData.feelsLike}°C
+          </p>
         </div>
       </div>
     </>

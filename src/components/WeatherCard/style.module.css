@@ -1,10 +1,41 @@
 .weatherCard {
   margin: 3rem;
-  width: 45rem;
-  height: 30rem;
+  width: 40%;
   border: 2px solid #fafafa10;
   border-radius: 5px;
   margin: 0 auto;
   background: #fafafa10;
-  backdrop-filter: blur(0.4rem);
+  backdrop-filter: blur(0.9rem);
+  padding: 1.5rem;
+}
+
+.currentTime {
+  color: #f1f1f1;
+}
+
+.mainInfo {
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cityName {
+  font-size: 2.5rem;
+  color: #f1f1f1;
+}
+
+.extraInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+
+.extraInfoTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f1f1f1;
+  padding-right: 0.5rem;
 }

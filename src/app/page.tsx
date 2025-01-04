@@ -25,11 +25,12 @@ export default function Home() {
   const fetchData = async () => {
     try {
       const response = await getWeather(state.city);
+      console.log({ response });
       const weatherData = {
         name: response.name,
-        temp: response.main.temp,
-        humidity: response.main.humidity,
-        feelsLike: response.main.feels_like,
+        temp: Math.floor(response.main.temp).toString(),
+        humidity: Math.floor(response.main.humidity).toString(),
+        feelsLike: Math.floor(response.main.feels_like).toString(),
         icon: 'http://openweathermap.org/img/w/' + response.weather[0].icon + '.png',
       };
 
